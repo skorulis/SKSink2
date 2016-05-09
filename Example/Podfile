@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'SKSink_Example', :exclusive => true do
+  pod 'SKSink', :path => '../'
+end
+
+target 'SKSink_Tests', :exclusive => true do
+  pod 'SKSink', :path => '../'
+
+  pod 'Specta'
+  pod 'Expecta'
+end
