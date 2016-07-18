@@ -16,6 +16,14 @@
     return [self endContext];
 }
 
++ (UIImage *)borderImageWithColor:(UIColor *)color width:(CGFloat)width {
+    CGSize size = CGSizeMake(width*2 + 3, width*2 + 3);
+    CGContextRef ctx = [self startContext:size opaque:NO];
+    CGContextSetLineWidth(ctx, width);
+    CGContextSetStrokeColorWithColor(ctx, color.CGColor);
+    CGContextStrokeRect(ctx, CGRectMake(0, 0, size.width, size.height));
+    return [[self endContext] resizableImageWithCapInsets:UIEdgeInsetsMake(width, width, width, width)];
+}
 
 + (CGContextRef)startContext:(CGSize)size opaque:(BOOL)opaque {
     CGFloat scale = [[UIScreen mainScreen] scale];
