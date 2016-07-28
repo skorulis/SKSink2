@@ -4,6 +4,10 @@
 
 @implementation UIImage (SKAdditions)
 
+- (CGSize) pixelSize {
+    return CGSizeMake(self.size.width*self.scale, self.size.height*self.scale);
+}
+
 - (UIImage*)reduceToPixelSize:(CGSize)pixelSize {
     if(self.pixelSize.width > pixelSize.width || self.pixelSize.height > pixelSize.height) {
         CGSize scaledSize = CGSizeMake(pixelSize.width / self.scale, pixelSize.height / self.scale);
