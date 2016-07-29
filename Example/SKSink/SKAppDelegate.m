@@ -1,18 +1,15 @@
-//
-//  SKAppDelegate.m
-//  SKSink
-//
 //  Created by Alexander Skorulis on 05/09/2016.
 //  Copyright (c) 2016 Alexander Skorulis. All rights reserved.
-//
 
 #import "SKAppDelegate.h"
+@import SKSink;
 
 @implementation SKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    SKFeatureFlagModel *m = nil;
     return YES;
 }
 
