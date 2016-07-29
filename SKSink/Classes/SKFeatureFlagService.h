@@ -18,5 +18,8 @@
 - (void)cycleFlag:(SKFeatureFlagModel*)flag;
 - (void)toggleFlag:(SKFeatureFlagModel*)flag;
 
+- (SKFeatureFlagModel*)addOptionsFlag:(NSString*)title default:(NSString*)value options:(NSArray*)options;
+- (SKFeatureFlagModel*)addBoolFlag:(NSString*)title;
+
 
 @end
