@@ -37,6 +37,18 @@
     return ctx;
 }
 
++ (UIImage *)changeImage:(UIImage*)image color:(UIColor *)color {
+    CGContextRef context = [self startContext:image.size opaque:false scale:image.scale];
+    CGContextTranslateCTM(context, 0, image.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    CGContextClipToMask(context, rect, image.CGImage);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    return [self endContext];
+}
+
 + (UIImage*)endContext {
     UIImage* img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

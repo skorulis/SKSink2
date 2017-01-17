@@ -10,6 +10,7 @@
 + (UIImage *)borderImageWithColor:(UIColor *)color width:(CGFloat)width;
 + (CGContextRef)startContext:(CGSize)size opaque:(BOOL)opaque;
 + (CGContextRef)startContext:(CGSize)size opaque:(BOOL)opaque scale:(float)scale;
++ (UIImage *)changeImage:(UIImage*)image color:(UIColor *)color;
 + (UIImage*)endContext;
 
 @end
